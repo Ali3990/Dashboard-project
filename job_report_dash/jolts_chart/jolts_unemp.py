@@ -5,7 +5,7 @@ import os
 
 def create_jolts_unemp_chart():
     base_dir = os.path.dirname(__file__)
-    file_path = os.path.join(base_dir, 'job_report_dash','jolts_unemp','data', 'jolts_ue_data.xlsx')
+    file_path = os.path.join(base_dir, 'data', 'jolts_ue_data.xlsx')
 
     df = pd.read_excel(file_path, header=None)
     df = df.drop(index=list(range(0, 6))).reset_index(drop=True)
@@ -17,8 +17,6 @@ def create_jolts_unemp_chart():
 
     df['Job Openings'] /= 1000
     df['Unemployment Rate'] /= 100
-    # print(df.head(10))
-
 
     # Build line and column combo chart 
     fig = go.Figure()
