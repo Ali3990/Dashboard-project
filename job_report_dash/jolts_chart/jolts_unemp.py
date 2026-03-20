@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import os
 
 def create_jolts_unemp_chart():
+
     base_dir = os.path.dirname(__file__)
     file_path = os.path.join(base_dir, 'data', 'jolts_ue_data.xlsx')
 
